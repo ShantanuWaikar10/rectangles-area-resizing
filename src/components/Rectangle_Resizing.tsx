@@ -138,7 +138,7 @@ export default function OvalConstantAreaRects() {
     }
 
     if (d.type === "resizeRectW" && d.id && d.orig) {
-      const { w: w0, area, cx, cy, dir } = d.orig as Rect & { dir: 1 | -1 };
+      const { w: w0, area, dir } = d.orig as Rect & { dir: 1 | -1 };
       let w = Math.max(20, w0 + dir * dx); // min width
       let h = clamp(area / w, 10, 600);    // recompute height to keep area constant
       // Optional: bound by oval — ensure rectangle corners stay reasonably within ellipse
